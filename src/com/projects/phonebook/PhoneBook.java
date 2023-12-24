@@ -54,8 +54,8 @@ public class PhoneBook {
             for (int i = 0; i < contacts.size(); i++) {
                 //int j = i + 1;
                 System.out.print("Contact No. " + (i + 1) );
-                System.out.print(" Name is: " + contacts.get(i).name +" and ");
-                System.out.println("Number is: " + contacts.get(i).number);
+                System.out.print(" Name is: " + contacts.get(i).getName() +" and ");
+                System.out.println("Number is: " + contacts.get(i).getNumber());
                 System.out.println("--------------------");
             }
         }
@@ -67,13 +67,11 @@ public class PhoneBook {
     private static void addContact(Scanner scanner){
         Contact newContact = new Contact();
         System.out.println("Enter contact's name: ");
-        newContact.name = scanner.nextLine();
-//        String name = scanner.nextLine();
+        String name = scanner.nextLine();
+        newContact.setName(name);
         System.out.println("Enter contact's number: ");
-        newContact.number = scanner.nextLine();
-//        String number = scanner.nextLine();
-//        names.add(name);
-//        numbers.add(number);
+        String number = scanner.nextLine();
+        newContact.setNumber(number);
         contacts.add(newContact);
         System.out.println("Contact added successfully!");
         System.out.println("--------------------");
